@@ -19,9 +19,12 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import page_objects.LandingPage;
 
 
 public class BaseTest {
@@ -105,6 +108,14 @@ public class BaseTest {
 
         return screenshotPath;
 	} 
+	
+	
+	@BeforeMethod(alwaysRun = false)
+	public LandingPage launchApp() throws IOException {
+		driver = initializeDriver();
+		LandingPage landingPage = new LandingPage(driver);
+		return landingPage;
+	}
 	
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
