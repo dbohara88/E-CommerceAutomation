@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-01-22T19:41:59 IST" name="Suite" finished-at="2025-01-22T19:42:02 IST" duration-ms="2853">
+    <groups>
+    </groups>
+    <test started-at="2025-01-22T19:41:59 IST" name="Test" finished-at="2025-01-22T19:42:02 IST" duration-ms="2853">
+      <class name="tests.SubmitOrder">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:tests.SubmitOrder@4f9a2c08]" started-at="2025-01-22T19:42:00 IST" name="launchApp" finished-at="2025-01-22T19:42:02 IST" duration-ms="2348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="test(java.util.HashMap)[pri:0, instance:tests.SubmitOrder@4f9a2c08]" started-at="2025-01-22T19:42:02 IST" name="test" data-provider="getData" finished-at="2025-01-22T19:42:02 IST" duration-ms="293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{pass=secret_sauce, userID=standard_user}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrder@4f9a2c08]" started-at="2025-01-22T19:42:02 IST" name="tearDown" finished-at="2025-01-22T19:42:02 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.SubmitOrder -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -30,9 +30,11 @@ public class LandingPage extends AbstractComponent{
 		driver.get("https://www.saucedemo.com/");
 	}
 	
-	public void loginApp(String userID, String passKey) {
+	public HomePage loginApp(String userID, String passKey) {
 		userName.sendKeys(userID);
 		pass.sendKeys(passKey);
 		loginBttn.click();
+		HomePage homePage = new HomePage(driver);
+		return homePage;
 	}
 }

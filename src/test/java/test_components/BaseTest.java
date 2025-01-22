@@ -114,6 +114,7 @@ public class BaseTest {
 	public LandingPage launchApp() throws IOException {
 		driver = initializeDriver();
 		LandingPage landingPage = new LandingPage(driver);
+		landingPage.url();
 		return landingPage;
 	}
 	
