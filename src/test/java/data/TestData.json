@@ -1,6 +1,9 @@
 [
 	{
 		"userID": "standard_user",
-		"pass": "secret_sauce"
+		"pass": "secret_sauce",
+		"product": "Sauce Labs Fleece Jacket",
+		"firstName": "Deepak",
+		"lastName": "Bohara"
 	}
 ]

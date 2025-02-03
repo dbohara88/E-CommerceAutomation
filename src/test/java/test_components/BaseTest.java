@@ -31,6 +31,7 @@ public class BaseTest {
 
 	public WebDriver driver;
 	private static Properties prop;
+	public LandingPage landingPage;
 	
 	public WebDriver initializeDriver() throws IOException {
 		prop = new Properties();
@@ -113,14 +114,14 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun = false)
 	public LandingPage launchApp() throws IOException {
 		driver = initializeDriver();
-		LandingPage landingPage = new LandingPage(driver);
+		landingPage = new LandingPage(driver);
 		landingPage.url();
 		return landingPage;
 	}
 	
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
-		driver.quit();
+		//driver.quit();
 	}
 	
 }

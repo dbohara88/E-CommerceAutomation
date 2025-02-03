@@ -13,12 +13,12 @@ public class HomePage extends AbstractComponent{
 	
 	private WebDriver driver;
 	
-	@FindBy(id = "inventory_item")
+	@FindBy(css = ".inventory_item")
 	List<WebElement> productList;
 	
-	By prod = By.className("inventory_list"); //item container
-	By itemName = By.className("inventory_item_name"); //item name
-	By addToCartBttn = By.className(".pricebar button"); //add item
+	By prod = By.cssSelector(".inventory_item"); //item container
+	By itemName = By.cssSelector(".inventory_item_name"); //item name
+	By addToCartBttn = By.cssSelector(".pricebar button"); //add item
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -32,6 +32,6 @@ public class HomePage extends AbstractComponent{
 	}
 	
 	public void getProductByName(String productName) {
-		productList.stream().filter(s -> s.findElement(itemName).getText().equalsIgnoreCase(productName)).map(s -> s.findElement(addToCartBttn)).forEach(s->s.click());
+		productList.stream().filter(s -> s.findElement(itemName).getText().equalsIgnoreCase(productName)).map(s -> s.findElement(addToCartBttn)).forEach( s-> s.click());;
 	}
 }
