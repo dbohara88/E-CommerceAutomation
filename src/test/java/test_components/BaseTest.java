@@ -48,8 +48,10 @@ public class BaseTest {
 			if(browserName.contains("headless"))
 			{
 				options.addArguments("headless");
+				options.addArguments("guest");
 				driver.manage().window().maximize();
 			}
+			options.addArguments("guest");
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
 		}

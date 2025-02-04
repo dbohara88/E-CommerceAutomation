@@ -9,7 +9,7 @@ public class ExtentReporterNG {
 	{
 		String filePath = System.getProperty("user.dir")+"//reports//index.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(filePath);
-		reporter.config().setReportName("Facebook Automation Result");
+		reporter.config().setReportName("E-Commerce Automation Result");
 		reporter.config().setDocumentTitle("Test Results");
 		reporter.config().setTheme(Theme.DARK);
 		

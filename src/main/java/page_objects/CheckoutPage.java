@@ -37,7 +37,13 @@ public class CheckoutPage extends AbstractComponent{
 		setLastName.sendKeys(lastName);
 		setZipCode.sendKeys(zipCode);
 		continueBttn.click();
+		
+	}
+
+	public ConfirmationPage placeOrder() {
 		finishBttn.click();
+		ConfirmationPage confirm = new ConfirmationPage(driver);
+		return confirm;
 	}
 	
 }

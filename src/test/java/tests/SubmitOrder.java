@@ -9,6 +9,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import page_objects.CartPage;
+import page_objects.CheckoutPage;
+import page_objects.ConfirmationPage;
 import page_objects.HomePage;
 import test_components.BaseTest;
 
@@ -28,6 +30,14 @@ public class SubmitOrder extends BaseTest{
 		Boolean match = cg.productValue(input.get("product"));
 		Assert.assertTrue(match);
 		
+		CheckoutPage checkout = cg.clickCheckoutButton();
+		checkout.setAddress(input.get("firstName"), input.get("lastName"), input.get("zipCode"));
+		
+		ConfirmationPage confirm = checkout.placeOrder();
+		
+		String confirmMessage = confirm.thankYouText();
+		//System.out.println(confirmMessage);
+		Assert.assertTrue(confirmMessage.equalsIgnoreCase("Thank you for your order!"));
 	}
 	
 	@DataProvider

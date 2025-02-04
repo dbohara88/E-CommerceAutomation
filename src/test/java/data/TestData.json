@@ -4,6 +4,7 @@
 		"pass": "secret_sauce",
 		"product": "Sauce Labs Fleece Jacket",
 		"firstName": "Deepak",
-		"lastName": "Bohara"
+		"lastName": "Bohara",
+		"zipCode": 411
 	}
 ]
