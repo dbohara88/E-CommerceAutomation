@@ -30,17 +30,18 @@ import page_objects.LandingPage;
 public class BaseTest {
 
 	public WebDriver driver;
-	private static Properties prop;
+	
 	public LandingPage landingPage;
 	
 	public WebDriver initializeDriver() throws IOException {
-		prop = new Properties();
+		Properties prop = new Properties();
 		String filePath = System.getProperty("user.dir")+"/src/main/java/resources/GlobalData.properties";
-		
 		FileInputStream fis = new FileInputStream(filePath);
 		prop.load(fis);
 		
-		String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
+		
+		
+		String browserName = System.getProperty("browser")!=null? System.getProperty("browser") : prop.getProperty("browser");
 		
 		if(browserName.contains("chrome")) {
 			
@@ -113,7 +114,7 @@ public class BaseTest {
 	} 
 	
 	
-	@BeforeMethod(alwaysRun = false)
+	@BeforeMethod(alwaysRun = true)
 	public LandingPage launchApp() throws IOException {
 		driver = initializeDriver();
 		landingPage = new LandingPage(driver);
@@ -123,7 +124,7 @@ public class BaseTest {
 	
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
-		//driver.quit();
+		driver.quit();
 	}
 	
 }

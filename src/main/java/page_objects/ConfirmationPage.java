@@ -9,7 +9,7 @@ import abstract_component.AbstractComponent;
 
 public class ConfirmationPage extends AbstractComponent{
 
-	private WebDriver driver;
+	public WebDriver driver;
 	
 	
 	public ConfirmationPage(WebDriver driver) {

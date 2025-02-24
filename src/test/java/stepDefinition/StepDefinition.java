@@ -34,8 +34,10 @@ public class StepDefinition extends BaseTest{
 	}
 	
 	@When("^I add the product (.+) from Cart$")
-	public void I_add_the_product_from_Cart(String str1) {
+	public void I_add_the_product_from_Cart(String str1) throws InterruptedException {
+		
 		homepage.getProductByName(str1);
+		
 		cg = homepage.clickCart();
 	}
 	
