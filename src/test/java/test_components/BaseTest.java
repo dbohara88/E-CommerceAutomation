@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +34,7 @@ public class BaseTest {
 	
 	public LandingPage landingPage;
 	
+	
 	public WebDriver initializeDriver() throws IOException {
 		Properties prop = new Properties();
 		String filePath = System.getProperty("user.dir")+"/src/main/java/resources/GlobalData.properties";
@@ -49,12 +51,14 @@ public class BaseTest {
 			if(browserName.contains("headless"))
 			{
 				options.addArguments("headless");
-				options.addArguments("guest");
-				driver.manage().window().maximize();
+				
 			}
 			options.addArguments("guest");
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
+			 if(browserName.contains("headless")) {
+			        driver.manage().window().setSize(new Dimension(1400, 900));
+			    }
 		}
 		else if (browserName.equalsIgnoreCase("firefox")) {
 			driver = new FirefoxDriver();
@@ -126,5 +130,6 @@ public class BaseTest {
 	public void tearDown() {
 		driver.quit();
 	}
-	
 }
+	
+

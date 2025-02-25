@@ -6,7 +6,7 @@ Feature: Purchase an order from E-commerce Website
   Background:
   Given I landed on E-Commerce Page
 
-  @tag1
+  @SubmitOrder
   Scenario Outline: Positive test for submitting the order
     Given Logged in with username <name> and password <password>
     When I add the product  <productName> from Cart

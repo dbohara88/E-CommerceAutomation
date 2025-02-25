@@ -57,6 +57,7 @@ public class StepDefinition extends BaseTest{
 	public void I_verify_the_text(String orderConfirmText) {
 		String confirmMessage = confirm.thankYouText();
 		Assert.assertTrue(confirmMessage.equalsIgnoreCase(orderConfirmText));
+		driver.close();
 	}
 
 }
